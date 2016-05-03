@@ -1,0 +1,12 @@
+{
+    "name": "Test composer file",
+    "description": "Test file for release bash script",
+    "license": "MIT",
+    "version": "0.0.1",
+    "authors": [
+        {
+            "name": "Steven Verbiest",
+            "email": "steven@statik.be"
+        }
+    ]
+}

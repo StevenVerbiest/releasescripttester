@@ -1,0 +1,30 @@
+TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
+
+while getopts "t:" opt; do
+    case "${opt}" in
+        t)
+            #TAG_PARAM=true
+
+            if [ $OPTARG = "m" ] || [ $OPTARG = "major" ] ; then
+                echo "Major release"
+            elif [ $OPTARG = "i" ] || [ $OPTARG = "minor" ] ; then
+                echo "Minor release"
+            elif [ $OPTARG = "b" ] || [ $OPTARG = "bug" ] ; then
+                echo "Bug fix"
+            else
+                echo 'No valid version parameter.'
+            fi
+
+            #echo "-t was triggered, Parameter: ${OPTARG}" >&2
+            ;;
+        *)
+            echo "Unknown parameter."
+            ;;
+    esac
+done
+
+#git flow init
+#git flow release start $TIMESTAMP;
+#git flow release finish -m "Release-$TIMESTAMP" $TIMESTAMP;
+#git push --all
+#git checkout develop
